@@ -1,0 +1,70 @@
+﻿@model IEnumerable<AuthorUrlishMarroquin.Models.Autore>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AuthorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuthorCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Genre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReleaseYear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberOfPages)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PiecesSold)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuthorName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuthorCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Genre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReleaseYear)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberOfPages)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PiecesSold)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AuthorID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AuthorID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AuthorID })
+        </td>
+    </tr>
+}
+
+</table>

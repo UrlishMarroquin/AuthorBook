@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Models" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Autore">
+    <Key>
+      <PropertyRef Name="AuthorID" />
+    </Key>
+    <Property Name="AuthorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AuthorName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AuthorCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Genre" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="BookTitle" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="ReleaseYear" Type="Int32" />
+    <Property Name="NumberOfPages" Type="Int32" />
+    <Property Name="PiecesSold" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityContainer Name="AuthorDBContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Autores" EntityType="Self.Autore" />
+  </EntityContainer>
+</Schema>
